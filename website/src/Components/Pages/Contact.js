@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
 
-class blog extends Component {
+class Contact extends Component {
 
     constructor(props) {
         super(props)
@@ -173,138 +173,76 @@ class blog extends Component {
                     </div>
                 </nav>
 
-
                 <section className="hero-wrap hero-wrap-2">
-                    <div className="blogImage img-responsive">
-                        <img src="/images/bg_3.jpg" alt="BlogImage" style={{ height: "400%", dataStellarBackgroundRatio: "0.5" }} />
-                    </div>
+                    <img src="images/bg_3.jpg" style={{ dataStellarBackgroundRatio: "0.5" }}></img>
                     <div className="overlay"></div>
                     <div className="container">
                         <div className="row no-gutters slider-text align-items-end justify-content-center">
-                            <div className="col-md-9  text-center mb-4">
-                                <h1 className="mb-2 bread">Blog</h1>
-                                <p className="breadcrumbs"><span className="mr-2"><a href="/">Home <i className="ion-ios-arrow-forward"></i></a></span> <span>Blog <i className="ion-ios-arrow-forward"></i></span></p>
+                            <div className="col-md-9 text-center mb-4">
+                                <h1 className="mb-2 bread">Contact</h1>
+                                <p className="breadcrumbs"><span className="mr-2">
+                                    <Link to="/">Home <i className="ion-ios-arrow-forward"></i></Link>
+                                </span> <span>Contact us <i className="ion-ios-arrow-forward"></i></span></p>
                             </div>
                         </div>
                     </div>
                 </section>
 
-                <section className="ftco-section bg-light">
+                {/* <section className="ftco-section ftco-no-pt ftco-no-pb contact-section">
+			    <div className="container">
+				    <div className="row d-flex align-items-stretch no-gutters">
+					<div className="col-md-6 pt-5 px-2 pb-2 p-md-5 order-md-last">
+						<h2 className="h4 mb-2 mb-md-5 font-weight-bold">Contact Us</h2>
+						<form action="#">
+                    <div className="form-group">
+                        <input type="text" className="form-control" placeholder="Your Name"><input>
+                    </div>
+              <div className="form-group">
+                <input type="text" className="form-control" placeholder="Your Email"></input>
+              </div>
+              <div className="form-group">
+                <input type="text" className="form-control" placeholder="Subject"></input>
+              </div>
+              <div className="form-group">
+                <textarea name="" id="" cols="30" rows="7" className="form-control" placeholder="Message"></textarea>
+              </div>
+              <div className="form-group">
+                <input type="submit" value="Send Message" className="btn btn-primary py-3 px-5"></input>
+              </div>
+            </form>
+					</div>
+					<div className="col-md-6 d-flex align-items-stretch">
+						<div id="map"></div>
+					</div>
+				</div>
+			</div>
+		</section> */}
+
+                <section className="ftco-section contact-section">
                     <div className="container">
-                        <div className="row">
-                            <div className="col-md-4 ">
-                                <div className="blog-entry">
-                                    <Link to="/blog1" className="block-20" style="background-image: url('images/image_1.jpg');"></Link>
-                                    <div className="text pt-3 pb-4 px-4">
-                                        <div className="meta">
-                                            <div><a href="#">Sept. 06, 2019</a></div>
-                                            <div><a href="#">Admin</a></div>
-                                        </div>
-                                        <h3 className="heading"><a href="#">Taste the delicious foods in Asia</a></h3>
-                                        <p className="clearfix">
-                                            <a href="#" className="float-left read">Read more</a>
-                                            <a href="#" className="float-right meta-chat"><span className="icon-chat"></span> 3</a>
-                                        </p>
-                                    </div>
+                        <div className="row d-flex contact-info">
+                            <div className="col-md-12 mb-4">
+                                <h2 className="h4 font-weight-bold">Contact Information</h2>
+                            </div>
+                            <div className="w-100"></div>
+                            <div className="col-md-3 d-flex">
+                                <div className="dbox">
+                                    <p><span>Address:</span> 198 West 21th Street, Suite 721 New York NY 10016</p>
                                 </div>
                             </div>
-                            <div className="col-md-4 ">
-                                <div className="blog-entry">
-                                    <Link to="/blog1" className="block-20" style="background-image: url('images/image_1.jpg');"></Link>
-
-                                    <div className="text pt-3 pb-4 px-4">
-                                        <div className="meta">
-                                            <div><a href="#">Sept. 06, 2019</a></div>
-                                            <div><a href="#">Admin</a></div>
-                                        </div>
-                                        <h3 className="heading"><a href="#">Taste the delicious foods in Asia</a></h3>
-                                        <p className="clearfix">
-                                            <a href="#" className="float-left read">Read more</a>
-                                            <a href="#" className="float-right meta-chat"><span className="icon-chat"></span> 3</a>
-                                        </p>
-                                    </div>
+                            <div className="col-md-3 d-flex">
+                                <div className="dbox">
+                                    <p><span>Phone:</span> <a href="tel://1234567920">+ 1235 2355 98</a></p>
                                 </div>
                             </div>
-                            <div className="col-md-4 ">
-                                <div className="blog-entry">
-                                    <Link to="/blog1" className="block-20" style="background-image: url('images/image_1.jpg');"></Link>
-
-                                    <div className="text pt-3 pb-4 px-4">
-                                        <div className="meta">
-                                            <div><a href="#">Sept. 06, 2019</a></div>
-                                            <div><a href="#">Admin</a></div>
-                                        </div>
-                                        <h3 className="heading"><a href="#">Taste the delicious foods in Asia</a></h3>
-                                        <p className="clearfix">
-                                            <a href="#" className="float-left read">Read more</a>
-                                            <a href="#" className="float-right meta-chat"><span className="icon-chat"></span> 3</a>
-                                        </p>
-                                    </div>
+                            <div className="col-md-3 d-flex">
+                                <div className="dbox">
+                                    <p><span>Email:</span> <a href="mailto:info@yoursite.com">info@yoursite.com</a></p>
                                 </div>
                             </div>
-                            <div className="col-md-4 ">
-                                <div className="blog-entry">
-                                    <Link to="/blog1" className="block-20" style="background-image: url('images/image_1.jpg');"></Link>
-
-                                    <div className="text pt-3 pb-4 px-4">
-                                        <div className="meta">
-                                            <div><a href="#">Sept. 06, 2019</a></div>
-                                            <div><a href="#">Admin</a></div>
-                                        </div>
-                                        <h3 className="heading"><a href="#">Taste the delicious foods in Asia</a></h3>
-                                        <p className="clearfix">
-                                            <a href="#" className="float-left read">Read more</a>
-                                            <a href="#" className="float-right meta-chat"><span className="icon-chat"></span> 3</a>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="col-md-4 ">
-                                <div className="blog-entry">
-                                    <Link to="/blog1" className="block-20" style="background-image: url('images/image_1.jpg');"></Link>
-
-                                    <div className="text pt-3 pb-4 px-4">
-                                        <div className="meta">
-                                            <div><a href="#">Sept. 06, 2019</a></div>
-                                            <div><a href="#">Admin</a></div>
-                                        </div>
-                                        <h3 className="heading"><a href="#">Taste the delicious foods in Asia</a></h3>
-                                        <p className="clearfix">
-                                            <a href="#" className="float-left read">Read more</a>
-                                            <a href="#" className="float-right meta-chat"><span className="icon-chat"></span> 3</a>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="col-md-4 ">
-                                <div className="blog-entry">
-                                    <Link to="/blog1" className="block-20" style="background-image: url('images/image_1.jpg');"></Link>
-                                    <div className="text pt-3 pb-4 px-4">
-                                        <div className="meta">
-                                            <div><Link to="/blog1">Sept. 06, 2019</Link></div>
-                                            <div><a href="#">Admin</a></div>
-                                        </div>
-                                        <h3 className="heading"><a href="#">Taste the delicious foods in Asia</a></h3>
-                                        <p className="clearfix">
-                                            <a href="#" className="float-left read">Read more</a>
-                                            <a href="#" className="float-right meta-chat"><span className="icon-chat"></span> 3</a>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="row no-gutters my-5">
-                            <div className="col text-center">
-                                <div className="block-27">
-                                    <ul>
-                                        <li><a href="#">&lt;</a></li>
-                                        <li className="active"><span>1</span></li>
-                                        <li><a href="#">2</a></li>
-                                        <li><a href="#">3</a></li>
-                                        <li><a href="#">4</a></li>
-                                        <li><a href="#">5</a></li>
-                                        <li><a href="#">&gt;</a></li>
-                                    </ul>
+                            <div className="col-md-3 d-flex">
+                                <div className="dbox">
+                                    <p><span>Website</span> <a href="#">yoursite.com</a></p>
                                 </div>
                             </div>
                         </div>
@@ -389,4 +327,4 @@ class blog extends Component {
     };
 }
 
-export default blog;
+export default Contact;

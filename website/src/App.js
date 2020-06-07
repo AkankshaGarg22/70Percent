@@ -7,6 +7,7 @@ const BiryaniMansion = React.lazy(() => import('./Components/Home/BiryaniMansion
 const SeventyPercentDiet = React.lazy(() => import('./Components/Home/SeventyPercentDiet'));
 const SeventyPercentMarinations = React.lazy(() => import('./Components/Home/SeventyPercentMarinations'));
 const Blog = React.lazy(() => import('./Components/Blog/blog'));
+const Contact = React.lazy(() => import('./Components/Pages/Contact'));
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route exact={true} path="/seventyPercentDiet" name="seventyPercentDiet" render={props => <SeventyPercentDiet {...props} />} />
           <Route exact={true} path="/seventyPercentMarinations" name="seventyPercentMarinations" render={props => <SeventyPercentMarinations {...props} />} />
           <Route exact={true} path="/stories" name="blog" render={props => <Blog {...props} />} />
+          <Route exact={true} path="/contact" name="contact" render={props => <Contact {...props} />} />
         </Switch>
       </React.Suspense>
     </BrowserRouter>

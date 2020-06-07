@@ -199,7 +199,7 @@ class Home extends Component {
 
 
                     <OwlCarousel
-                        className="owl-theme js-fullheight body"
+                        className="home-slider js-fullheight owl-loaded owl-drag"
                         autoplay={true}
                         margin={0}
                         animateOut={'fadeOut'}
@@ -237,7 +237,7 @@ class Home extends Component {
                                                 <div className="row">
                                                     <div className="col-md-3">
                                                         <div className="featured-menus">
-                                                            <div className="menu-img img" onClick={(e) => this.changeHomePage(e, 'seventyPercentRestroCafe')}>
+                                                            <div className="menu-img img clickCursor" onClick={(e) => this.changeHomePage(e, 'seventyPercentRestroCafe')}>
                                                                 <img src="images/70PercentRestroCafe.png" style={{ borderRadius: '50%' }} />
                                                                 <div className="text">
                                                                     <h3>70 Percent Restro Cafe</h3>
@@ -247,7 +247,7 @@ class Home extends Component {
                                                     </div>
                                                     <div className="col-md-3">
                                                         <div className="featured-menus">
-                                                            <div className="menu-img img" onClick={(e) => this.changeHomePage(e, 'biryaniMansion')}>
+                                                            <div className="menu-img img clickCursor" onClick={(e) => this.changeHomePage(e, 'biryaniMansion')}>
                                                                 <img src="images/biryaniMansionLogo.png" style={{ borderRadius: '50%' }} />
                                                                 <div className="text">
                                                                     <h3>Biryani Mansion</h3>
@@ -257,7 +257,7 @@ class Home extends Component {
                                                     </div>
                                                     <div className="col-md-3">
                                                         <div className="featured-menus">
-                                                            <div className="menu-img img" onClick={(e) => this.changeHomePage(e, 'seventyPercentDiet')}>
+                                                            <div className="menu-img img clickCursor" onClick={(e) => this.changeHomePage(e, 'seventyPercentDiet')}>
                                                                 <img src="images/70PercentDietLogo.png" style={{ borderRadius: '50%' }} />
                                                                 <div className="text">
                                                                     <h3>70 Percent Diet</h3>
@@ -267,7 +267,7 @@ class Home extends Component {
                                                     </div>
                                                     <div className="col-md-3">
                                                         <div className="featured-menus">
-                                                            <div className="menu-img img" onClick={(e) => this.changeHomePage(e, 'seventyPercentMarinations')}>
+                                                            <div className="menu-img img clickCursor" onClick={(e) => this.changeHomePage(e, 'seventyPercentMarinations')}>
                                                                 <img src="images/70PercentMarinationsLogo.png" style={{ borderRadius: '50%' }} />
                                                                 <div className="text">
                                                                     <h3>70 Percent Marinations</h3>
@@ -303,7 +303,7 @@ class Home extends Component {
                                                 <div className="row">
                                                     <div className="col-md-3">
                                                         <div className="featured-menus">
-                                                            <div className="menu-img img" onClick={(e) => this.changeHomePage(e, 'seventyPercentRestroCafe')}>
+                                                            <div className="menu-img img clickCursor" onClick={(e) => this.changeHomePage(e, 'seventyPercentRestroCafe')}>
                                                                 <img src="images/70PercentRestroCafe.png" style={{ borderRadius: '50%' }} />
                                                                 <div className="text">
                                                                     <h3>70 Percent Restro Cafe</h3>
@@ -313,7 +313,7 @@ class Home extends Component {
                                                     </div>
                                                     <div className="col-md-3">
                                                         <div className="featured-menus">
-                                                            <div className="menu-img img" onClick={(e) => this.changeHomePage(e, 'biryaniMansion')}>
+                                                            <div className="menu-img img clickCursor" onClick={(e) => this.changeHomePage(e, 'biryaniMansion')}>
                                                                 <img src="images/biryaniMansionLogo.png" style={{ borderRadius: '50%' }} />
                                                                 <div className="text">
                                                                     <h3>Biryani Mansion</h3>
@@ -323,7 +323,7 @@ class Home extends Component {
                                                     </div>
                                                     <div className="col-md-3">
                                                         <div className="featured-menus">
-                                                            <div className="menu-img img" onClick={(e) => this.changeHomePage(e, 'seventyPercentDiet')}>
+                                                            <div className="menu-img img clickCursor" onClick={(e) => this.changeHomePage(e, 'seventyPercentDiet')}>
                                                                 <img src="images/70PercentDietLogo.png" style={{ borderRadius: '50%' }} />
                                                                 <div className="text">
                                                                     <h3>70 Percent Diet</h3>
@@ -333,7 +333,7 @@ class Home extends Component {
                                                     </div>
                                                     <div className="col-md-3">
                                                         <div className="featured-menus">
-                                                            <div className="menu-img img" onClick={(e) => this.changeHomePage(e, 'seventyPercentMarinations')}>
+                                                            <div className="menu-img img clickCursor" onClick={(e) => this.changeHomePage(e, 'seventyPercentMarinations')}>
                                                                 <img src="images/70PercentMarinationsLogo.png" style={{ borderRadius: '50%' }} />
                                                                 <div className="text">
                                                                     <h3>70 Percent Marinations</h3>
@@ -369,7 +369,7 @@ class Home extends Component {
                                                 <div className="row">
                                                     <div className="col-md-3">
                                                         <div className="featured-menus">
-                                                            <div className="menu-img img" onClick={(e) => this.changeHomePage(e, 'seventyPercentRestroCafe')}>
+                                                            <div className="menu-img img clickCursor" onClick={(e) => this.changeHomePage(e, 'seventyPercentRestroCafe')}>
                                                                 <img src="images/70PercentRestroCafe.png" style={{ borderRadius: '50%' }} />
                                                                 <div className="text">
                                                                     <h3>70 Percent Restro Cafe</h3>
@@ -379,7 +379,7 @@ class Home extends Component {
                                                     </div>
                                                     <div className="col-md-3">
                                                         <div className="featured-menus">
-                                                            <div className="menu-img img" onClick={(e) => this.changeHomePage(e, 'biryaniMansion')}>
+                                                            <div className="menu-img img clickCursor" onClick={(e) => this.changeHomePage(e, 'biryaniMansion')}>
                                                                 <img src="images/biryaniMansionLogo.png" style={{ borderRadius: '50%' }} />
                                                                 <div className="text">
                                                                     <h3>Biryani Mansion</h3>
@@ -389,7 +389,7 @@ class Home extends Component {
                                                     </div>
                                                     <div className="col-md-3">
                                                         <div className="featured-menus">
-                                                            <div className="menu-img img" onClick={(e) => this.changeHomePage(e, 'seventyPercentDiet')}>
+                                                            <div className="menu-img img clickCursor" onClick={(e) => this.changeHomePage(e, 'seventyPercentDiet')}>
                                                                 <img src="images/70PercentDietLogo.png" style={{ borderRadius: '50%' }} />
                                                                 <div className="text">
                                                                     <h3>70 Percent Diet</h3>
@@ -399,7 +399,7 @@ class Home extends Component {
                                                     </div>
                                                     <div className="col-md-3">
                                                         <div className="featured-menus">
-                                                            <div className="menu-img img" onClick={(e) => this.changeHomePage(e, 'seventyPercentMarinations')}>
+                                                            <div className="menu-img img clickCursor" onClick={(e) => this.changeHomePage(e, 'seventyPercentMarinations')}>
                                                                 <img src="images/70PercentMarinationsLogo.png" style={{ borderRadius: '50%' }} />
                                                                 <div className="text">
                                                                     <h3>70 Percent Marinations</h3>
@@ -435,7 +435,7 @@ class Home extends Component {
                                                 <div className="row">
                                                     <div className="col-md-3">
                                                         <div className="featured-menus">
-                                                            <div className="menu-img img" onClick={(e) => this.changeHomePage(e, 'seventyPercentRestroCafe')}>
+                                                            <div className="menu-img img clickCursor" onClick={(e) => this.changeHomePage(e, 'seventyPercentRestroCafe')}>
                                                                 <img src="images/70PercentRestroCafe.png" style={{ borderRadius: '50%' }} />
                                                                 <div className="text">
                                                                     <h3>70 Percent Restro Cafe</h3>
@@ -445,7 +445,7 @@ class Home extends Component {
                                                     </div>
                                                     <div className="col-md-3">
                                                         <div className="featured-menus">
-                                                            <div className="menu-img img" onClick={(e) => this.changeHomePage(e, 'biryaniMansion')}>
+                                                            <div className="menu-img img clickCursor" onClick={(e) => this.changeHomePage(e, 'biryaniMansion')}>
                                                                 <img src="images/biryaniMansionLogo.png" style={{ borderRadius: '50%' }} />
                                                                 <div className="text">
                                                                     <h3>Biryani Mansion</h3>
@@ -455,7 +455,7 @@ class Home extends Component {
                                                     </div>
                                                     <div className="col-md-3">
                                                         <div className="featured-menus">
-                                                            <div className="menu-img img" onClick={(e) => this.changeHomePage(e, 'seventyPercentDiet')}>
+                                                            <div className="menu-img img clickCursor" onClick={(e) => this.changeHomePage(e, 'seventyPercentDiet')}>
                                                                 <img src="images/70PercentDietLogo.png" style={{ borderRadius: '50%' }} />
                                                                 <div className="text">
                                                                     <h3>70 Percent Diet</h3>
@@ -465,7 +465,7 @@ class Home extends Component {
                                                     </div>
                                                     <div className="col-md-3">
                                                         <div className="featured-menus">
-                                                            <div className="menu-img img" onClick={(e) => this.changeHomePage(e, 'seventyPercentMarinations')}>
+                                                            <div className="menu-img img clickCursor" onClick={(e) => this.changeHomePage(e, 'seventyPercentMarinations')}>
                                                                 <img src="images/70PercentMarinationsLogo.png" style={{ borderRadius: '50%' }} />
                                                                 <div className="text">
                                                                     <h3>70 Percent Marinations</h3>
@@ -501,7 +501,7 @@ class Home extends Component {
                                                 <div className="row">
                                                     <div className="col-md-3">
                                                         <div className="featured-menus">
-                                                            <div className="menu-img img" onClick={(e) => this.changeHomePage(e, 'seventyPercentRestroCafe')}>
+                                                            <div className="menu-img img clickCursor" onClick={(e) => this.changeHomePage(e, 'seventyPercentRestroCafe')}>
                                                                 <img src="images/70PercentRestroCafe.png" style={{ borderRadius: '50%' }} />
                                                                 <div className="text">
                                                                     <h3>70 Percent Restro Cafe</h3>
@@ -511,7 +511,7 @@ class Home extends Component {
                                                     </div>
                                                     <div className="col-md-3">
                                                         <div className="featured-menus">
-                                                            <div className="menu-img img" onClick={(e) => this.changeHomePage(e, 'biryaniMansion')}>
+                                                            <div className="menu-img img clickCursor" onClick={(e) => this.changeHomePage(e, 'biryaniMansion')}>
                                                                 <img src="images/biryaniMansionLogo.png" style={{ borderRadius: '50%' }} />
                                                                 <div className="text">
                                                                     <h3>Biryani Mansion</h3>
@@ -521,7 +521,7 @@ class Home extends Component {
                                                     </div>
                                                     <div className="col-md-3">
                                                         <div className="featured-menus">
-                                                            <div className="menu-img img" onClick={(e) => this.changeHomePage(e, 'seventyPercentDiet')}>
+                                                            <div className="menu-img img clickCursor" onClick={(e) => this.changeHomePage(e, 'seventyPercentDiet')}>
                                                                 <img src="images/70PercentDietLogo.png" style={{ borderRadius: '50%' }} />
                                                                 <div className="text">
                                                                     <h3>70 Percent Diet</h3>
@@ -531,7 +531,7 @@ class Home extends Component {
                                                     </div>
                                                     <div className="col-md-3">
                                                         <div className="featured-menus">
-                                                            <div className="menu-img img" onClick={(e) => this.changeHomePage(e, 'seventyPercentMarinations')}>
+                                                            <div className="menu-img img clickCursor" onClick={(e) => this.changeHomePage(e, 'seventyPercentMarinations')}>
                                                                 <img src="images/70PercentMarinationsLogo.png" style={{ borderRadius: '50%' }} />
                                                                 <div className="text">
                                                                     <h3>70 Percent Marinations</h3>
