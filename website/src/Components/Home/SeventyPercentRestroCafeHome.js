@@ -3,6 +3,7 @@ import OwlCarousel from 'react-owl-carousel';
 import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css';
 import CountUp from 'react-countup';
+import { Link } from 'react-router-dom';
 
 class SeventyPercentRestroCafeHome extends Component {
 
@@ -99,16 +100,29 @@ class SeventyPercentRestroCafeHome extends Component {
                             <a className="navbar-brand" href="/">
                                 <div className="logo img" /><img src={this.state.backgroundLogo} alt="Logo" width={this.state.logoWidth} height={this.state.logoHeight} />
                             </a>
-                            <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-                                <span className="oi oi-menu" /> Menu
-                            </button>
                             <div className="collapse navbar-collapse" id="ftco-nav">
                                 <ul className="navbar-nav ml-auto">
-                                    <li className="nav-item active"><a href="/" className="nav-link">Home</a></li>
-                                    <li className="nav-item"><a href="about.html" className="nav-link">About</a></li>
-                                    <li className="nav-item"><a href="blog.html" className="nav-link">Stories</a></li>
-                                    <li className="nav-item"><a href="contact.html" className="nav-link">Contact</a></li>
-                                    <li className="nav-item cta"><a href="reservation.html" className="nav-link">Book a table</a></li>
+                                    <li className="nav-item active" onClick={(e) => this.tabClickHandler(e, 'home')}>
+                                        <a className={`nav-link ${this.state.activeTab === 'home' ? 'active' : ''}`} id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="false">Home</a>
+                                    </li>
+                                    <li class="dropdown nav-item">
+                                        <a href="#" class="dropdown-toggle-nav nav-link" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Brands <span class="caret"></span></a>
+                                        <ul class="dropdown-menu">
+                                            <li className="dropdown-item"><Link to='/seventyPercentCafe'>70 Percent Restro Cafe</Link></li>
+                                            <li className="dropdown-item"><Link to='/seventyPercentMarinations'>70 Percent Marinations</Link></li>
+                                            <li className="dropdown-item"><Link to='/biryaniMansion'>Biryani Mansion</Link></li>
+                                            <li className="dropdown-item"><Link to='/seventyPercentDiet'>70 Percent Dier</Link></li>
+                                        </ul>
+                                    </li>
+                                    <li className="nav-item" onClick={(e) => this.tabClickHandler(e, 'stories')}>
+                                        <a className={`nav-link ${this.state.activeTab === 'stories' ? 'active' : ''}`} id="stories-tab" data-toggle="tab" href="#stories" role="tab" aria-controls="stories" aria-selected="false">Stories</a>
+                                    </li>
+                                    <li className="nav-item" onClick={(e) => this.tabClickHandler(e, 'contact')}>
+                                        <a className={`nav-link ${this.state.activeTab === 'contact' ? 'active' : ''}`} id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Contact</a>
+                                    </li>
+                                    <li className="nav-item cta" onClick={(e) => this.tabClickHandler(e, 'menu')}>
+                                        <a className={`nav-link ${this.state.activeTab === 'menu' ? 'active' : ''}`} id="menu-tab" data-toggle="tab" href="#menu" role="tab" aria-controls="menu" aria-selected="false">Menu</a>
+                                    </li>
                                 </ul>
                             </div>
                         </div>
@@ -154,8 +168,8 @@ class SeventyPercentRestroCafeHome extends Component {
                             <div className="row slider-text justify-content-center align-items-center">
                                 <div className="row justify-content-center">
                                     <div className="col-md-12 text-center heading-section">
-                                    <span className="subheading">70 Percent Hospitality</span>
-                                        <h1 className="mb-4" style={{marginTop: "50px"}}>Biryani Mansion</h1>
+                                        <span className="subheading">70 Percent Hospitality</span>
+                                        <h1 className="mb-4" style={{ marginTop: "50px" }}>Biryani Mansion</h1>
                                     </div>
                                 </div>
                             </div>
@@ -169,7 +183,7 @@ class SeventyPercentRestroCafeHome extends Component {
                                 <div className="row justify-content-center">
                                     <div className="col-md-12 text-center heading-section">
                                         <span className="subheading">70 Percent Hospitality</span>
-                                        <h1 className="mb-4" style={{marginTop: "50px"}}>70 Percent Diet</h1>
+                                        <h1 className="mb-4" style={{ marginTop: "50px" }}>70 Percent Diet</h1>
                                     </div>
                                 </div>
                             </div>
@@ -183,7 +197,7 @@ class SeventyPercentRestroCafeHome extends Component {
                                 <div className="row justify-content-center">
                                     <div className="col-md-12 text-center heading-section">
                                         <span className="subheading">70 Percent Hospitality</span>
-                                        <h1 className="mb-4" style={{marginTop: "50px"}}>70 Percent Restro Cafe</h1>
+                                        <h1 className="mb-4" style={{ marginTop: "50px" }}>70 Percent Restro Cafe</h1>
                                     </div>
                                 </div>
                             </div>
@@ -197,7 +211,7 @@ class SeventyPercentRestroCafeHome extends Component {
                                 <div className="row justify-content-center">
                                     <div className="col-md-12 text-center heading-section">
                                         <span className="subheading">70 Percent Hospitality</span>
-                                        <h1 className="mb-4" style={{marginTop: "50px"}}>70 Percent Marinations</h1>
+                                        <h1 className="mb-4" style={{ marginTop: "50px" }}>70 Percent Marinations</h1>
                                     </div>
                                 </div>
                             </div>
@@ -205,18 +219,18 @@ class SeventyPercentRestroCafeHome extends Component {
                     </OwlCarousel>
                     {/* END nav */}
 
-                    <section className="ftco-section ftco-counter img ftco-no-pt" style={{marginTop: "100px"}}>
+                    <section className="ftco-section ftco-counter img ftco-no-pt" style={{ marginTop: "100px" }}>
                         <div className="container">
                             <div className="row">
                                 <div className="col-md-12 d-flex">
-                                    <img src="/images/About.jpg" alt="About70Percent" width="600px" height="400px" style={{marginBottom: "50px"}} />
+                                    <img src="/images/About.jpg" alt="About70Percent" width="600px" height="400px" style={{ marginBottom: "50px" }} />
                                     <div className="col-md-5 wrap-about pt-5 pt-md-5 pb-md-3">
                                         <div className="col-md-12 text-center heading-section" style={{ float: "right", marginLeft: "100px" }}>
                                             <span className="subheading">About</span>
                                             <h2 className="mb-4">70 Percent</h2>
                                             <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
                                             <div className="text-md">
-                                            <p>Contact Us<br></br><strong className="number">email@email.com</strong></p>
+                                                <p>Contact Us<br></br><strong className="number">email@email.com</strong></p>
                                                 <span className="time"><strong className="number"><a href="#">1-978-123-4567</a></strong></span>
                                             </div>
                                         </div>

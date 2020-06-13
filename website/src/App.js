@@ -8,7 +8,9 @@ const SeventyPercentDiet = React.lazy(() => import('./Components/Home/SeventyPer
 const SeventyPercentMarinations = React.lazy(() => import('./Components/Home/SeventyPercentMarinations'));
 const Blog = React.lazy(() => import('./Components/Blog/blog'));
 const Contact = React.lazy(() => import('./Components/Pages/Contact'));
+const SingleBlog = React.lazy(() => import('./Components/Blog/singleBlog'));
 
+window.isOnline = true;
 function App() {
   return (
     <BrowserRouter>
@@ -21,6 +23,7 @@ function App() {
           <Route exact={true} path="/seventyPercentMarinations" name="seventyPercentMarinations" render={props => <SeventyPercentMarinations {...props} />} />
           <Route exact={true} path="/stories" name="blog" render={props => <Blog {...props} />} />
           <Route exact={true} path="/contact" name="contact" render={props => <Contact {...props} />} />
+          <Route exact={true} path="/blog" name="blog1" render={props => <SingleBlog {...props} />} />
         </Switch>
       </React.Suspense>
     </BrowserRouter>

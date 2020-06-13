@@ -149,16 +149,15 @@ class blog extends Component {
                                 <li className="nav-item active" onClick={(e) => this.tabClickHandler(e, 'home')}>
                                     <a className={`nav-link ${this.state.activeTab === 'home' ? 'active' : ''}`} id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="false">Home</a>
                                 </li>
-                                {/* <li className="nav-item"><a href="#" className="dropdown-toggle-nav nav-link" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" data-toggle="dropdown">Brands</a> */}
-                                {/* <ul className="dropdown-menu-nav" aria-expanded="false">
-                                            <div className= "dropdown-content">
-                                            <li className= "dropdown-item"><a href="#">70 Percent Restro Cafe</a></li>
-                                            <li className= "dropdown-item"><a href="3">70 Percent Marinations</a></li>
-                                            <li className= "dropdown-item"><a href="#">Biryani Mansion</a></li>
-                                            <li className= "dropdown-item"><a href="3">70 Percent Diet</a></li>
-                                            </div>
-                                        </ul> */}
-                                {/* </li> */}
+                                <li className="dropdown nav-item">
+                                    <a href="#" className="dropdown-toggle-nav nav-link" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Brands <span className="caret"></span></a>
+                                    <ul className="dropdown-menu">
+                                        <li className="dropdown-item"><Link to='/seventyPercentCafe'>70 Percent Restro Cafe</Link></li>
+                                        <li className="dropdown-item"><Link to='/seventyPercentMarinations'>70 Percent Marinations</Link></li>
+                                        <li className="dropdown-item"><Link to='/biryaniMansion'>Biryani Mansion</Link></li>
+                                        <li className="dropdown-item"><Link to='/seventyPercentDiet'>70 Percent Dier</Link></li>
+                                    </ul>
+                                </li>
                                 <li className="nav-item" onClick={(e) => this.tabClickHandler(e, 'stories')}>
                                     <a className={`nav-link ${this.state.activeTab === 'stories' ? 'active' : ''}`} id="stories-tab" data-toggle="tab" href="#stories" role="tab" aria-controls="stories" aria-selected="false">Stories</a>
                                 </li>
@@ -176,14 +175,16 @@ class blog extends Component {
 
                 <section className="hero-wrap hero-wrap-2">
                     <div className="blogImage img-responsive">
-                        <img src="/images/bg_3.jpg" alt="BlogImage" style={{ height: "400%", dataStellarBackgroundRatio: "0.5" }} />
+                        <img src="/images/bg_3.jpg" alt="BlogImage" style={{ dataStellarBackgroundRatio: "0.5" }} />
                     </div>
                     <div className="overlay"></div>
                     <div className="container">
                         <div className="row no-gutters slider-text align-items-end justify-content-center">
                             <div className="col-md-9  text-center mb-4">
                                 <h1 className="mb-2 bread">Blog</h1>
-                                <p className="breadcrumbs"><span className="mr-2"><a href="/">Home <i className="ion-ios-arrow-forward"></i></a></span> <span>Blog <i className="ion-ios-arrow-forward"></i></span></p>
+                                <p className="breadcrumbs"><span className="mr-2">
+                                    <Link to="/">Home <i className="ion-ios-arrow-forward"></i></Link></span>
+                                    <span>Blog <i className="ion-ios-arrow-forward"></i></span></p>
                             </div>
                         </div>
                     </div>
@@ -194,106 +195,60 @@ class blog extends Component {
                         <div className="row">
                             <div className="col-md-4 ">
                                 <div className="blog-entry">
-                                    <Link to="/blog1" className="block-20" style="background-image: url('images/image_1.jpg');"></Link>
+                                    <Link to="/blog" className="block-20" style={{ backgroundImage: 'url("images/image_1.jpg")' }}></Link>
                                     <div className="text pt-3 pb-4 px-4">
                                         <div className="meta">
-                                            <div><a href="#">Sept. 06, 2019</a></div>
-                                            <div><a href="#">Admin</a></div>
+                                            <div><Link to="/blog">Sept. 06, 2019</Link></div>
+                                            <div><Link to="/blog">Admin</Link></div>
                                         </div>
-                                        <h3 className="heading"><a href="#">Taste the delicious foods in Asia</a></h3>
+                                        <h3 className="heading">
+                                            <div><Link to="/blog">Taste the delicious foods in Asia</Link></div>
+                                        </h3>
                                         <p className="clearfix">
-                                            <a href="#" className="float-left read">Read more</a>
-                                            <a href="#" className="float-right meta-chat"><span className="icon-chat"></span> 3</a>
+                                            <div><Link to="/blog" className="float-left read">Read more</Link></div>
+                                            <div><Link to="/blog" className="float-right meta-chat"><span className="icon-chat" /> 3</Link></div>
                                         </p>
                                     </div>
                                 </div>
                             </div>
                             <div className="col-md-4 ">
                                 <div className="blog-entry">
-                                    <Link to="/blog1" className="block-20" style="background-image: url('images/image_1.jpg');"></Link>
-
+                                    <Link to="/blog" className="block-20" style={{ backgroundImage: 'url("images/image_2.jpg")' }}></Link>
                                     <div className="text pt-3 pb-4 px-4">
                                         <div className="meta">
-                                            <div><a href="#">Sept. 06, 2019</a></div>
-                                            <div><a href="#">Admin</a></div>
+                                            <div><Link to="/blog">Sept. 06, 2019</Link></div>
+                                            <div><Link to="/blog">Admin</Link></div>
                                         </div>
-                                        <h3 className="heading"><a href="#">Taste the delicious foods in Asia</a></h3>
+                                        <h3 className="heading">
+                                            <div><Link to="/blog">Taste the delicious foods in Asia</Link></div>
+                                        </h3>
                                         <p className="clearfix">
-                                            <a href="#" className="float-left read">Read more</a>
-                                            <a href="#" className="float-right meta-chat"><span className="icon-chat"></span> 3</a>
+                                            <div><Link to="/blog" className="float-left read">Read more</Link></div>
+                                            <div><Link to="/blog" className="float-right meta-chat"><span className="icon-chat" /> 3</Link></div>
                                         </p>
                                     </div>
                                 </div>
                             </div>
                             <div className="col-md-4 ">
                                 <div className="blog-entry">
-                                    <Link to="/blog1" className="block-20" style="background-image: url('images/image_1.jpg');"></Link>
-
+                                    <Link to="/blog" className="block-20" style={{ backgroundImage: 'url("images/image_3.jpg")' }}></Link>
                                     <div className="text pt-3 pb-4 px-4">
                                         <div className="meta">
-                                            <div><a href="#">Sept. 06, 2019</a></div>
-                                            <div><a href="#">Admin</a></div>
+                                            <div><Link to="/blog">Sept. 06, 2019</Link></div>
+                                            <div><Link to="/blog">Admin</Link></div>
                                         </div>
-                                        <h3 className="heading"><a href="#">Taste the delicious foods in Asia</a></h3>
+                                        <h3 className="heading">
+                                            <div><Link to="/blog">Taste the delicious foods in Asia</Link></div>
+                                        </h3>
                                         <p className="clearfix">
-                                            <a href="#" className="float-left read">Read more</a>
-                                            <a href="#" className="float-right meta-chat"><span className="icon-chat"></span> 3</a>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="col-md-4 ">
-                                <div className="blog-entry">
-                                    <Link to="/blog1" className="block-20" style="background-image: url('images/image_1.jpg');"></Link>
-
-                                    <div className="text pt-3 pb-4 px-4">
-                                        <div className="meta">
-                                            <div><a href="#">Sept. 06, 2019</a></div>
-                                            <div><a href="#">Admin</a></div>
-                                        </div>
-                                        <h3 className="heading"><a href="#">Taste the delicious foods in Asia</a></h3>
-                                        <p className="clearfix">
-                                            <a href="#" className="float-left read">Read more</a>
-                                            <a href="#" className="float-right meta-chat"><span className="icon-chat"></span> 3</a>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="col-md-4 ">
-                                <div className="blog-entry">
-                                    <Link to="/blog1" className="block-20" style="background-image: url('images/image_1.jpg');"></Link>
-
-                                    <div className="text pt-3 pb-4 px-4">
-                                        <div className="meta">
-                                            <div><a href="#">Sept. 06, 2019</a></div>
-                                            <div><a href="#">Admin</a></div>
-                                        </div>
-                                        <h3 className="heading"><a href="#">Taste the delicious foods in Asia</a></h3>
-                                        <p className="clearfix">
-                                            <a href="#" className="float-left read">Read more</a>
-                                            <a href="#" className="float-right meta-chat"><span className="icon-chat"></span> 3</a>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="col-md-4 ">
-                                <div className="blog-entry">
-                                    <Link to="/blog1" className="block-20" style="background-image: url('images/image_1.jpg');"></Link>
-                                    <div className="text pt-3 pb-4 px-4">
-                                        <div className="meta">
-                                            <div><Link to="/blog1">Sept. 06, 2019</Link></div>
-                                            <div><a href="#">Admin</a></div>
-                                        </div>
-                                        <h3 className="heading"><a href="#">Taste the delicious foods in Asia</a></h3>
-                                        <p className="clearfix">
-                                            <a href="#" className="float-left read">Read more</a>
-                                            <a href="#" className="float-right meta-chat"><span className="icon-chat"></span> 3</a>
+                                            <div><Link to="/blog" className="float-left read">Read more</Link></div>
+                                            <div><Link to="/blog" className="float-right meta-chat"><span className="icon-chat" /> 3</Link></div>
                                         </p>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div className="row no-gutters my-5">
+                        {/* <div className="row no-gutters my-5">
                             <div className="col text-center">
                                 <div className="block-27">
                                     <ul>
@@ -307,7 +262,7 @@ class blog extends Component {
                                     </ul>
                                 </div>
                             </div>
-                        </div>
+                        </div> */}
                     </div>
                 </section>
 

@@ -44,6 +44,8 @@ body {
   transform: translate(-50%, -50%);
 }
 
+.error-message{color:#ee3843;font-size: 14px;font-family:'open_sanssemibold';}
+
 .flaticon-cake:before {
   content: '\f102';
 }

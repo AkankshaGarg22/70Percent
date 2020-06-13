@@ -1,11 +1,22 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import GoogleMapReact from 'google-map-react';
+
+const AnyReactComponent = ({ text }) => <div>{text}</div>;
 
 
 class Contact extends Component {
+    static defaultProps = {
+        center: {
+            lat: 30.3165,
+            lng: 78.0322
+        },
+        zoom: 11
+    };
 
     constructor(props) {
-        super(props)
+        super(props);
+
         this.state = {
             isLoading: true,
             backgroundLogo: "/images/70LogoWhite.png",
@@ -13,12 +24,11 @@ class Contact extends Component {
             logoHeight: "150px",
             feedback: '',
             formSubmitted: false,
+            phone: '',
             name: '',
             email: '',
-            phone: '',
-            date: '',
-            time: '',
-            person: '',
+            subject: 'Location Enquiry',
+            message: '',
             formEmailSent: false,
             activeTab: 'home'
         }
@@ -61,24 +71,31 @@ class Contact extends Component {
 
     handleSubmit(event) {
         event.preventDefault();
-        this.sendFeedback(
-            "template_a55gKTQC",
-            this.state.email,
-            "70percent.restro.cafe@gmail.com",
-            "user_MMbdlqhIyzTBljTFWsRab"
-        );
+        if (this.state.message !== '' && this.state.subject !== '' && this.state.phone !== '' && this.state.name !== '' && this.state.email !== '') {
+            this.sendFeedback(
+                "location_enquiry",
+                this.state.email,
+                "70percent.restro.cafe@gmail.com",
+                "user_MMbdlqhIyzTBljTFWsRab"
+            );
 
-        this.setState({
-            formSubmitted: true
-        });
+            this.setState({
+                formSubmitted: true
+            });
+        } else {
+            return (
+                <div className="error-message">Value cannot be empty</div>
+            )
+        }
     }
 
     // Note: this is using default_service, which will map to whatever
     // default email provider you've set in your EmailJS account.
     sendFeedback(templateId, senderEmail, receiverEmail, feedback, user) {
         window.emailjs
-            .send('gmail', templateId, { "name": this.state.name, "phone": this.state.phone, "email": this.state.email, "date": this.state.date, "time": this.state.time, "person": this.state.person }, user)
+            .send('gmail', templateId, { "name": this.state.name, "subject": this.state.subject, "email": this.state.email, "message": this.state.message }, user)
             .then(res => {
+                console.log('response sent');
                 this.setState({
                     formEmailSent: true
                 });
@@ -149,19 +166,18 @@ class Contact extends Component {
                                 <li className="nav-item active" onClick={(e) => this.tabClickHandler(e, 'home')}>
                                     <a className={`nav-link ${this.state.activeTab === 'home' ? 'active' : ''}`} id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="false">Home</a>
                                 </li>
-                                {/* <li className="nav-item"><a href="#" className="dropdown-toggle-nav nav-link" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" data-toggle="dropdown">Brands</a> */}
-                                {/* <ul className="dropdown-menu-nav" aria-expanded="false">
-                                            <div className= "dropdown-content">
-                                            <li className= "dropdown-item"><a href="#">70 Percent Restro Cafe</a></li>
-                                            <li className= "dropdown-item"><a href="3">70 Percent Marinations</a></li>
-                                            <li className= "dropdown-item"><a href="#">Biryani Mansion</a></li>
-                                            <li className= "dropdown-item"><a href="3">70 Percent Diet</a></li>
-                                            </div>
-                                        </ul> */}
-                                {/* </li> */}
-                                <li className="nav-item" onClick={(e) => this.tabClickHandler(e, 'stories')}>
-                                    <a className={`nav-link ${this.state.activeTab === 'stories' ? 'active' : ''}`} id="stories-tab" data-toggle="tab" href="#stories" role="tab" aria-controls="stories" aria-selected="false">Stories</a>
+                                <li className="dropdown nav-item">
+                                    <a href="#" className="dropdown-toggle-nav nav-link" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Brands <span className="caret"></span></a>
+                                    <ul className="dropdown-menu">
+                                        <li className="dropdown-item"><Link to='/seventyPercentCafe'>70 Percent Restro Cafe</Link></li>
+                                        <li className="dropdown-item"><Link to='/seventyPercentMarinations'>70 Percent Marinations</Link></li>
+                                        <li className="dropdown-item"><Link to='/biryaniMansion'>Biryani Mansion</Link></li>
+                                        <li className="dropdown-item"><Link to='/seventyPercentDiet'>70 Percent Dier</Link></li>
+                                    </ul>
                                 </li>
+                                {/* <li className="nav-item" onClick={(e) => this.tabClickHandler(e, 'stories')}>
+                                        <a className={`nav-link ${this.state.activeTab === 'stories' ? 'active' : ''}`} id="stories-tab" data-toggle="tab" href="#stories" role="tab" aria-controls="stories" aria-selected="false">Stories</a>
+                                    </li> */}
                                 <li className="nav-item" onClick={(e) => this.tabClickHandler(e, 'contact')}>
                                     <a className={`nav-link ${this.state.activeTab === 'contact' ? 'active' : ''}`} id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Contact</a>
                                 </li>
@@ -174,7 +190,7 @@ class Contact extends Component {
                 </nav>
 
                 <section className="hero-wrap hero-wrap-2">
-                    <img src="images/bg_3.jpg" style={{ dataStellarBackgroundRatio: "0.5" }}></img>
+                    <img src="images/bg_3.jpg" style={{ dataStellarBackgroundRatio: "0.5", height: "100%", width: "100%" }}></img>
                     <div className="overlay"></div>
                     <div className="container">
                         <div className="row no-gutters slider-text align-items-end justify-content-center">
@@ -187,36 +203,62 @@ class Contact extends Component {
                         </div>
                     </div>
                 </section>
+                <section className="ftco-section ftco-no-pt ftco-no-pb contact-section">
+                    <div className="container">
+                        <div className="row d-flex align-items-stretch no-gutters">
+                            <div className="col-md-6 pt-5 px-2 pb-2 p-md-5 order-md-last">
+                                <h2 className="h4 mb-2 mb-md-5 font-weight-bold">Contact Us</h2>
+                                <form>
 
-                {/* <section className="ftco-section ftco-no-pt ftco-no-pb contact-section">
-			    <div className="container">
-				    <div className="row d-flex align-items-stretch no-gutters">
-					<div className="col-md-6 pt-5 px-2 pb-2 p-md-5 order-md-last">
-						<h2 className="h4 mb-2 mb-md-5 font-weight-bold">Contact Us</h2>
-						<form action="#">
-                    <div className="form-group">
-                        <input type="text" className="form-control" placeholder="Your Name"><input>
+                                    <div className="form-group">
+                                        <input type="text" className="form-control"
+                                            placeholder="Your Name"
+                                            onChange={(event) => this.inputChangeHandler(event)}
+                                            name="name"
+                                            required={true} />
+                                    </div>
+                                    <div className="form-group">
+                                        <input type="email" className="form-control"
+                                            value={this.state.email}
+                                            placeholder="Your Email"
+                                            onChange={(event) => this.inputChangeHandler(event)}
+                                            name="email"
+                                            required={true} />
+                                    </div>
+                                    <div className="form-group">
+                                        <input type="text" className="form-control"
+                                            value={this.state.phone}
+                                            placeholder="Your Phone"
+                                            onChange={(event) => this.inputChangeHandler(event)}
+                                            name="phone"
+                                            required={true} />
+                                    </div>
+                                    <div className="form-group">
+                                        <textarea name="message" id="message" cols="30" rows="7" className="form-control" placeholder="Message" onChange={(event) => this.inputChangeHandler(event)}></textarea>
+
+                                    </div>
+
+                                    <div className="form-group text-center">
+                                        <input type="submit" defaultValue="Submit" className="btn btn-primary py-3 px-5" onClick={(e) => this.handleSubmit(e)} />
+                                    </div>
+                                </form>
+                            </div>
+                            <div className="col-md-6 d-flex align-items-stretch">
+                                <GoogleMapReact
+                                    bootstrapURLKeys={{ key: 'AIzaSyCM4k21H1CeYaExG9DjRcxTRZcLgUUY3jI' }}
+                                    defaultCenter={this.props.center}
+                                    defaultZoom={this.props.zoom}
+                                >
+                                    <AnyReactComponent
+                                        lat={30.3318836}
+                                        lng={78.0085375}
+                                        text="My Marker"
+                                    />
+                                </GoogleMapReact>
+                            </div>
+                        </div>
                     </div>
-              <div className="form-group">
-                <input type="text" className="form-control" placeholder="Your Email"></input>
-              </div>
-              <div className="form-group">
-                <input type="text" className="form-control" placeholder="Subject"></input>
-              </div>
-              <div className="form-group">
-                <textarea name="" id="" cols="30" rows="7" className="form-control" placeholder="Message"></textarea>
-              </div>
-              <div className="form-group">
-                <input type="submit" value="Send Message" className="btn btn-primary py-3 px-5"></input>
-              </div>
-            </form>
-					</div>
-					<div className="col-md-6 d-flex align-items-stretch">
-						<div id="map"></div>
-					</div>
-				</div>
-			</div>
-		</section> */}
+                </section>
 
                 <section className="ftco-section contact-section">
                     <div className="container">

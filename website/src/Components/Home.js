@@ -4,6 +4,7 @@ import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css';
 import CountUp from 'react-countup';
 import Loader from '../Utils/Loader'
+import { Link } from 'react-router-dom';
 
 class Home extends Component {
 
@@ -173,16 +174,15 @@ class Home extends Component {
                                     <li className="nav-item active" onClick={(e) => this.tabClickHandler(e, 'home')}>
                                         <a className={`nav-link ${this.state.activeTab === 'home' ? 'active' : ''}`} id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="false">Home</a>
                                     </li>
-                                    {/* <li className="nav-item"><a href="#" className="dropdown-toggle-nav nav-link" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" data-toggle="dropdown">Brands</a> */}
-                                    {/* <ul className="dropdown-menu-nav" aria-expanded="false">
-                                            <div className= "dropdown-content">
-                                            <li className= "dropdown-item"><a href="#">70 Percent Restro Cafe</a></li>
-                                            <li className= "dropdown-item"><a href="3">70 Percent Marinations</a></li>
-                                            <li className= "dropdown-item"><a href="#">Biryani Mansion</a></li>
-                                            <li className= "dropdown-item"><a href="3">70 Percent Diet</a></li>
-                                            </div>
-                                        </ul> */}
-                                    {/* </li> */}
+                                    <li class="dropdown nav-item">
+                                        <a href="#" class="dropdown-toggle-nav nav-link" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Brands <span class="caret"></span></a>
+                                        <ul class="dropdown-menu">
+                                            <li className="dropdown-item"><Link to='/seventyPercentCafe'>70 Percent Restro Cafe</Link></li>
+                                            <li className="dropdown-item"><Link to='/seventyPercentMarinations'>70 Percent Marinations</Link></li>
+                                            <li className="dropdown-item"><Link to='/biryaniMansion'>Biryani Mansion</Link></li>
+                                            <li className="dropdown-item"><Link to='/seventyPercentDiet'>70 Percent Dier</Link></li>
+                                        </ul>
+                                    </li>
                                     <li className="nav-item" onClick={(e) => this.tabClickHandler(e, 'stories')}>
                                         <a className={`nav-link ${this.state.activeTab === 'stories' ? 'active' : ''}`} id="stories-tab" data-toggle="tab" href="#stories" role="tab" aria-controls="stories" aria-selected="false">Stories</a>
                                     </li>
@@ -883,6 +883,7 @@ class Home extends Component {
                             <div className="row d-flex">
                                 <div className="col-md-7 makereservation p-4 px-md-5 pb-md-5">
                                     <div className="heading-section mb-5">
+                                        <div class="subheading">Book a table</div>
                                         <h2 className="mb-4">Make Reservation</h2>
                                     </div>
                                     <form>
@@ -894,7 +895,7 @@ class Home extends Component {
                                                         placeholder="Your Name"
                                                         onChange={(event) => this.inputChangeHandler(event)}
                                                         name="name"
-                                                        required />
+                                                        required={true} />
                                                 </div>
                                             </div>
                                             <div className="col-md-6">
@@ -905,7 +906,7 @@ class Home extends Component {
                                                         placeholder="Your Email"
                                                         onChange={(event) => this.inputChangeHandler(event)}
                                                         name="email"
-                                                        required /></div>
+                                                        required={true} /></div>
                                             </div>
                                             <div className="col-md-6">
                                                 <div className="form-group">
@@ -915,7 +916,7 @@ class Home extends Component {
                                                         placeholder="Your Phone"
                                                         onChange={(event) => this.inputChangeHandler(event)}
                                                         name="phone"
-                                                        required /></div>
+                                                        required={true} /></div>
                                             </div>
                                             <div className="col-md-6">
                                                 <div className="form-group">
@@ -925,7 +926,7 @@ class Home extends Component {
                                                         onChange={(event) => this.inputChangeHandler(event)}
                                                         name="date"
                                                         data-type="name"
-                                                        required />                                                </div>
+                                                        required={true} />                                                </div>
                                             </div>
                                             <div className="col-md-6">
                                                 <div className="form-group">
@@ -934,7 +935,7 @@ class Home extends Component {
                                                         placeholder="Time"
                                                         onChange={(event) => this.inputChangeHandler(event)}
                                                         name="time"
-                                                        required />                                                </div>
+                                                        required={true} />                                                </div>
                                             </div>
                                             <div className="col-md-6">
                                                 <div className="form-group">
@@ -953,7 +954,7 @@ class Home extends Component {
                                             </div>
                                             <div className="col-md-12 mt-3">
                                                 <div className="form-group text-center">
-                                                    <input type="submit" defaultValue="Make a Reservation" className="btn btn-primary py-3 px-5" onClick={(e) => this.handleSubmit(e)} />
+                                                    <input type="Make a Reservation" name="Make a Reservation" defaultValue="Make a Reservation" className="btn btn-primary py-3 px-5" onClick={(e) => this.handleSubmit(e)} />
                                                 </div>
                                             </div>
                                         </div>
@@ -973,51 +974,54 @@ class Home extends Component {
                             <div className="row">
                                 <div className="col-md-4">
                                     <div className="blog-entry">
-                                        <a href="blog-single.html" className="block-20" style={{ backgroundImage: 'url("images/image_1.jpg")' }}>
-                                        </a>
+                                        <Link to="/blog" className="block-20" style={{ backgroundImage: 'url("images/image_1.jpg")' }}></Link>
                                         <div className="text pt-3 pb-4 px-4">
                                             <div className="meta">
-                                                <div><a href="#">Sept. 06, 2019</a></div>
-                                                <div><a href="#">Admin</a></div>
+                                                <div><Link to="/blog">Sept. 06, 2019</Link></div>
+                                                <div><Link to="/blog">Admin</Link></div>
                                             </div>
-                                            <h3 className="heading"><a href="#">Taste the delicious foods in Asia</a></h3>
+                                            <h3 className="heading">
+                                                <div><Link to="/blog">Taste the delicious foods in Asia</Link></div>
+                                            </h3>
                                             <p className="clearfix">
-                                                <a href="#" className="float-left read">Read more</a>
-                                                <a href="#" className="float-right meta-chat"><span className="icon-chat" /> 3</a>
+                                                <div><Link to="/blog" className="float-left read">Read more</Link></div>
+                                                <div><Link to="/blog" className="float-right meta-chat"><span className="icon-chat" /> 3</Link></div>
                                             </p>
                                         </div>
                                     </div>
                                 </div>
                                 <div className="col-md-4">
                                     <div className="blog-entry">
-                                        <a href="blog-single.html" className="block-20" style={{ backgroundImage: 'url("images/image_2.jpg")' }}>
-                                        </a>
+                                        <Link to="/blog" className="block-20" style={{ backgroundImage: 'url("images/image_3.jpg")' }}></Link>
                                         <div className="text pt-3 pb-4 px-4">
                                             <div className="meta">
-                                                <div><a href="#">Sept. 06, 2019</a></div>
-                                                <div><a href="#">Admin</a></div>
+                                                <div><Link to="/blog">Sept. 06, 2019</Link></div>
+                                                <div><Link to="/blog">Admin</Link></div>
                                             </div>
-                                            <h3 className="heading"><a href="#">Taste the delicious foods in Asia</a></h3>
+                                            <h3 className="heading">
+                                                <div><Link to="/blog">Taste the delicious foods in Asia</Link></div>
+                                            </h3>
                                             <p className="clearfix">
-                                                <a href="#" className="float-left read">Read more</a>
-                                                <a href="#" className="float-right meta-chat"><span className="icon-chat" /> 3</a>
+                                                <div><Link to="/blog" className="float-left read">Read more</Link></div>
+                                                <div><Link to="/blog" className="float-right meta-chat"><span className="icon-chat" /> 3</Link></div>
                                             </p>
                                         </div>
                                     </div>
                                 </div>
                                 <div className="col-md-4">
                                     <div className="blog-entry">
-                                        <a href="blog-single.html" className="block-20" style={{ backgroundImage: 'url("images/image_3.jpg")' }}>
-                                        </a>
+                                        <Link to="/blog" className="block-20" style={{ backgroundImage: 'url("images/image_2.jpg")' }}></Link>
                                         <div className="text pt-3 pb-4 px-4">
                                             <div className="meta">
-                                                <div><a href="#">Sept. 06, 2019</a></div>
-                                                <div><a href="#">Admin</a></div>
+                                                <div><Link to="/blog">Sept. 06, 2019</Link></div>
+                                                <div><Link to="/blog">Admin</Link></div>
                                             </div>
-                                            <h3 className="heading"><a href="#">Taste the delicious foods in Asia</a></h3>
+                                            <h3 className="heading">
+                                                <div><Link to="/blog">Taste the delicious foods in Asia</Link></div>
+                                            </h3>
                                             <p className="clearfix">
-                                                <a href="#" className="float-left read">Read more</a>
-                                                <a href="#" className="float-right meta-chat"><span className="icon-chat" /> 3</a>
+                                                <div><Link to="/blog" className="float-left read">Read more</Link></div>
+                                                <div><Link to="/blog" className="float-right meta-chat"><span className="icon-chat" /> 3</Link></div>
                                             </p>
                                         </div>
                                     </div>
