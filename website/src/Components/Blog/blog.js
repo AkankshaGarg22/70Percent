@@ -140,37 +140,37 @@ class blog extends Component {
                     </div>
                 </div>
                 <nav className="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
-                    <div className="container">
-                        <a className="navbar-brand" href="/">
-                            <div className="logo img" /><img src={this.state.backgroundLogo} alt="Logo" width={this.state.logoWidth} height={this.state.logoHeight} />
-                        </a>
-                        <div className="collapse navbar-collapse" id="ftco-nav">
-                            <ul className="navbar-nav ml-auto">
-                                <li className="nav-item active" onClick={(e) => this.tabClickHandler(e, 'home')}>
-                                    <a className={`nav-link ${this.state.activeTab === 'home' ? 'active' : ''}`} id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="false">Home</a>
-                                </li>
-                                <li className="dropdown nav-item">
-                                    <a href="#" className="dropdown-toggle-nav nav-link" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Brands <span className="caret"></span></a>
-                                    <ul className="dropdown-menu">
-                                        <li className="dropdown-item"><Link to='/seventyPercentCafe'>70 Percent Restro Cafe</Link></li>
-                                        <li className="dropdown-item"><Link to='/seventyPercentMarinations'>70 Percent Marinations</Link></li>
-                                        <li className="dropdown-item"><Link to='/biryaniMansion'>Biryani Mansion</Link></li>
-                                        <li className="dropdown-item"><Link to='/seventyPercentDiet'>70 Percent Dier</Link></li>
-                                    </ul>
-                                </li>
-                                <li className="nav-item" onClick={(e) => this.tabClickHandler(e, 'stories')}>
-                                    <a className={`nav-link ${this.state.activeTab === 'stories' ? 'active' : ''}`} id="stories-tab" data-toggle="tab" href="#stories" role="tab" aria-controls="stories" aria-selected="false">Stories</a>
-                                </li>
-                                <li className="nav-item" onClick={(e) => this.tabClickHandler(e, 'contact')}>
-                                    <a className={`nav-link ${this.state.activeTab === 'contact' ? 'active' : ''}`} id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Contact</a>
-                                </li>
-                                <li className="nav-item cta" onClick={(e) => this.tabClickHandler(e, 'menu')}>
-                                    <a className={`nav-link ${this.state.activeTab === 'menu' ? 'active' : ''}`} id="menu-tab" data-toggle="tab" href="#menu" role="tab" aria-controls="menu" aria-selected="false">Menu</a>
-                                </li>
-                            </ul>
+                        <div className="container">
+                            <a className="navbar-brand" href="/">
+                                <div className="logo img" /><img src={this.state.backgroundLogo} alt="Logo" width={this.state.logoWidth} height={this.state.logoHeight} />
+                            </a>
+                            <div className="collapse navbar-collapse" id="ftco-nav">
+                                <ul className="navbar-nav ml-auto">
+                                    <li className="nav-item active" onClick={(e) => this.tabClickHandler(e, 'home')}>
+                                        <a className={`nav-link ${this.state.activeTab === 'home' ? 'active' : ''}`} id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="false">Home</a>
+                                    </li>
+                                    <li class="dropdown nav-item">
+                                        <a href="#" class="dropdown-toggle-nav nav-link" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Brands <span class="caret"></span></a>
+                                        <ul class="dropdown-menu">
+                                            <li className="dropdown-item"><Link to='/seventyPercentCafe'>70 Percent Restro Cafe</Link></li>
+                                            <li className="dropdown-item"><Link to='/seventyPercentMarinations'>70 Percent Marinations</Link></li>
+                                            <li className="dropdown-item"><Link to='/biryaniMansion'>Biryani Mansion</Link></li>
+                                            <li className="dropdown-item"><Link to='/seventyPercentDiet'>70 Percent Dier</Link></li>
+                                        </ul>
+                                    </li>
+                                    <li className="nav-item" onClick={(e) => this.tabClickHandler(e, 'stories')}>
+                                        <a className={`nav-link ${this.state.activeTab === 'stories' ? 'active' : ''}`} id="stories-tab" data-toggle="tab" href="#stories" role="tab" aria-controls="stories" aria-selected="false">Stories</a>
+                                    </li>
+                                    <li className="nav-item" onClick={(e) => this.tabClickHandler(e, 'contact')}>
+                                        <a className={`nav-link ${this.state.activeTab === 'contact' ? 'active' : ''}`} id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Contact</a>
+                                    </li>
+                                    <li className="nav-item cta" onClick={(e) => this.tabClickHandler(e, 'menu')}>
+                                        <a className={`nav-link ${this.state.activeTab === 'menu' ? 'active' : ''}`} id="menu-tab" data-toggle="tab" href="#menu" role="tab" aria-controls="menu" aria-selected="false">Menu</a>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
-                    </div>
-                </nav>
+                    </nav>
 
 
                 <section className="hero-wrap hero-wrap-2">

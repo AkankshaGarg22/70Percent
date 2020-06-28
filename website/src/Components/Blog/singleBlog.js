@@ -77,8 +77,9 @@ class singleBlog extends Component {
     // default email provider you've set in your EmailJS account.
     sendFeedback(templateId, senderEmail, receiverEmail, feedback, user) {
         window.emailjs
-            .send('gmail', templateId, { "name": this.state.name, "phone": this.state.phone, "email": this.state.email, "date": this.state.date, "time": this.state.time, "person": this.state.person }, user)
+            .send('gmail', templateId, { "name": this.state.name, "subject": this.state.subject, "email": this.state.email, "message": this.state.message }, user)
             .then(res => {
+                console.log('response sent');
                 this.setState({
                     formEmailSent: true
                 });
@@ -149,14 +150,17 @@ class singleBlog extends Component {
                                 <li className="nav-item active" onClick={(e) => this.tabClickHandler(e, 'home')}>
                                     <a className={`nav-link ${this.state.activeTab === 'home' ? 'active' : ''}`} id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="false">Home</a>
                                 </li>
-                                <li className="dropdown nav-item">
-                                    <a href="#" className="dropdown-toggle-nav nav-link" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Brands <span className="caret"></span></a>
-                                    <ul className="dropdown-menu">
+                                <li class="dropdown nav-item">
+                                    <a href="#" class="dropdown-toggle-nav nav-link" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Brands <span class="caret"></span></a>
+                                    <ul class="dropdown-menu">
                                         <li className="dropdown-item"><Link to='/seventyPercentCafe'>70 Percent Restro Cafe</Link></li>
                                         <li className="dropdown-item"><Link to='/seventyPercentMarinations'>70 Percent Marinations</Link></li>
                                         <li className="dropdown-item"><Link to='/biryaniMansion'>Biryani Mansion</Link></li>
                                         <li className="dropdown-item"><Link to='/seventyPercentDiet'>70 Percent Dier</Link></li>
                                     </ul>
+                                </li>
+                                <li className="nav-item" onClick={(e) => this.tabClickHandler(e, 'stories')}>
+                                    <a className={`nav-link ${this.state.activeTab === 'stories' ? 'active' : ''}`} id="stories-tab" data-toggle="tab" href="#stories" role="tab" aria-controls="stories" aria-selected="false">Stories</a>
                                 </li>
                                 <li className="nav-item" onClick={(e) => this.tabClickHandler(e, 'contact')}>
                                     <a className={`nav-link ${this.state.activeTab === 'contact' ? 'active' : ''}`} id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Contact</a>
@@ -324,14 +328,14 @@ class singleBlog extends Component {
                                                     name="phone"
                                                     required={true} />
                                             </div>
-                                            <div className="form-group">
+                                            {/* <div className="form-group">
                                                 <input type="text" className="form-control"
                                                     value={this.state.subject}
                                                     placeholder="Website"
                                                     onChange={(event) => this.inputChangeHandler(event)}
                                                     name="subject"
                                                     required={true} />
-                                            </div>
+                                            </div> */}
                                             <div className="form-group">
                                                 <textarea name="message" id="message" cols="30" rows="7" className="form-control" placeholder="Message" onChange={(event) => this.inputChangeHandler(event)}></textarea>
 

@@ -50,6 +50,24 @@ class SeventyPercentRestroCafeHome extends Component {
         }
     }
 
+    tabClickHandler(e, name) {
+        e.preventDefault();
+        this.setState({
+            activeTab: name
+        })
+        if (name === 'home') {
+            this.props.history.push('/')
+        } else if (name === 'stories') {
+            this.props.history.push('/stories')
+        }
+        else if (name === 'contact') {
+            this.props.history.push('/contact')
+        }
+        else if (name === 'menu') {
+            this.props.history.push('/menu')
+        }
+    }
+
     render() {
         const options = {
             responsive: {
